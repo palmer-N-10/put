@@ -5,8 +5,10 @@ import Birthday from './components/Birthday';
 function App() {
   return (
     <div className="App">
-    <Birthday  fullName="Doe,Jane" age ={45} hairColor="Black"/>
-
+      <Birthday person={ {'firstName':'Jane', 'lastName':'Doe', 'age': 45, 'hair': 'Black'} } />
+      <Birthday person={ {'firstName':'John', 'lastName':'Smith', 'age': 88, 'hair': 'Brown'} } />
+      <Birthday person={ {'firstName':'Millard', 'lastName':'Fillmore', 'age': 50, 'hair': 'Brown'} } />
+      <Birthday person={ {'firstName':'Maria', 'lastName':'Smith', 'age': 62, 'hair': 'Brown'} } />
     </div>
   );
 }

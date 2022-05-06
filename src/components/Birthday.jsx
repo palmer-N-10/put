@@ -1,26 +1,34 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
     
     
-const Birthday = props => {
-    const [age, setAge] = useState(props.age);
-    const ageClick= ()=>{
-        setAge({
-            age: state.age+1
-        })
+class Birthday extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            age: this.props.person['age'],
+            hair: this.props.person['hair'],
+            firstName: this.props.person['firstName'],
+            lastName: this.props.person['lastName'],
+        };
     }
-    
-    return(
-        <div>
-            <h1>{props.fullName}</h1>
-          <h2>Age :{ state.age } </h2>  
-          <h2>Hair Color:{props.hairColor}</h2>
-          <button onClick={ageClcik}>Birthday</button>
-        
-        
-        
-        </div>
-    );
+
+
+    render() {
+        return (
+            <div>
+                <h1>{ this.state.lastName }, { this.state.firstName }</h1>
+                <p>Age: { this.state.age }</p>
+                <p>Hair Color: { this.state.hair }</p>
+                <button onClick={ () => this.setState(
+                        { age: this.state.age+1 }) }>
+                Birthday { this.state.fName } { this.state.lName }
+                </button>
+            </div>
+        );
+    }
 }
+    
+
     
 export default Birthday;
 
