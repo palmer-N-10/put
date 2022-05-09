@@ -6,29 +6,23 @@ class Birthday extends Component {
         super(props);
         this.state = {
             age: this.props.person['age'],
-            hair: this.props.person['hair'],
-            firstName: this.props.person['firstName'],
-            lastName: this.props.person['lastName'],
+        
         };
     }
-
-
     render() {
+        const  {firstName,lastName,hair}=this.props
         return (
             <div>
-                <h1>{ this.state.lastName }, { this.state.firstName }</h1>
+                <h1>{ lastName }, { firstName }</h1>
                 <p>Age: { this.state.age }</p>
-                <p>Hair Color: { this.state.hair }</p>
+                <p>Hair Color: { hair }</p>
                 <button onClick={ () => this.setState(
                         { age: this.state.age+1 }) }>
-                Birthday { this.state.fName } { this.state.lName }
+                Birthday
                 </button>
             </div>
         );
     }
 }
-    
-
-    
 export default Birthday;
 
